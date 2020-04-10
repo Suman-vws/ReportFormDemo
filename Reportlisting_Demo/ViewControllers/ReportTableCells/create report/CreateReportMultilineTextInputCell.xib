@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreateReportMultilineTextInputCell" rowHeight="51" id="bGx-Xc-7z0" customClass="CreateReportMultilineTextInputCell" customModule="Reportlisting_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bGx-Xc-7z0" id="Wgi-pZ-UhJ">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Y-pB-7yI" userLabel="ConatinerView">
+                        <rect key="frame" x="5" y="5" width="365" height="75"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJF-BC-Kev">
+                                <rect key="frame" x="10" y="5" width="146" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="WCV-sA-koy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I1h-vQ-Hrc">
+                                <rect key="frame" x="10" y="30" width="345" height="40"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="I1h-vQ-Hrc" firstAttribute="top" secondItem="jJF-BC-Kev" secondAttribute="bottom" constant="5" id="0LI-fr-Rn1"/>
+                            <constraint firstAttribute="trailing" secondItem="I1h-vQ-Hrc" secondAttribute="trailing" constant="10" id="D9S-4Y-q1X"/>
+                            <constraint firstItem="jJF-BC-Kev" firstAttribute="top" secondItem="Z9Y-pB-7yI" secondAttribute="top" constant="5" id="SCl-82-qBi"/>
+                            <constraint firstItem="I1h-vQ-Hrc" firstAttribute="leading" secondItem="Z9Y-pB-7yI" secondAttribute="leading" constant="10" id="m6c-bf-CGa"/>
+                            <constraint firstItem="jJF-BC-Kev" firstAttribute="width" secondItem="Z9Y-pB-7yI" secondAttribute="width" multiplier="0.4" id="of8-tD-v9u"/>
+                            <constraint firstItem="jJF-BC-Kev" firstAttribute="leading" secondItem="Z9Y-pB-7yI" secondAttribute="leading" constant="10" id="qtO-xK-Nhe"/>
+                            <constraint firstAttribute="bottom" secondItem="I1h-vQ-Hrc" secondAttribute="bottom" constant="5" id="rRS-eM-0wb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Z9Y-pB-7yI" firstAttribute="leading" secondItem="Wgi-pZ-UhJ" secondAttribute="leading" constant="5" id="50t-OV-eyb"/>
+                    <constraint firstAttribute="bottom" secondItem="Z9Y-pB-7yI" secondAttribute="bottom" constant="5" id="CtD-2A-ngt"/>
+                    <constraint firstItem="Z9Y-pB-7yI" firstAttribute="top" secondItem="Wgi-pZ-UhJ" secondAttribute="top" constant="5" id="I14-mv-Kdt"/>
+                    <constraint firstAttribute="trailing" secondItem="Z9Y-pB-7yI" secondAttribute="trailing" constant="5" id="SXo-ot-PWB"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="SXo-ot-PWB"/>
+                    </mask>
+                </variation>
+                <variation key="heightClass=compact-widthClass=compact">
+                    <mask key="constraints">
+                        <include reference="SXo-ot-PWB"/>
+                    </mask>
+                </variation>
+                <variation key="heightClass=compact-widthClass=regular">
+                    <mask key="constraints">
+                        <include reference="SXo-ot-PWB"/>
+                    </mask>
+                </variation>
+                <variation key="heightClass=regular-widthClass=compact">
+                    <mask key="constraints">
+                        <include reference="SXo-ot-PWB"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lblName" destination="jJF-BC-Kev" id="cOA-EF-xml"/>
+                <outlet property="multilineTxtVw" destination="I1h-vQ-Hrc" id="PMh-1u-Tv9"/>
+            </connections>
+            <point key="canvasLocation" x="3.6231884057971016" y="43.191964285714285"/>
+        </tableViewCell>
+    </objects>
+</document>

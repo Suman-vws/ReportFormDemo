@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreateReportTextFieldCell" rowHeight="51" id="zFa-gh-zNY" customClass="CreateReportTextFieldCell" customModule="Reportlisting_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zFa-gh-zNY" id="Vh5-su-pCJ">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R39-Is-g2T" userLabel="ConatinerView">
+                        <rect key="frame" x="5" y="5" width="365" height="75"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R7-FK-1Bf">
+                                <rect key="frame" x="10" y="5" width="146" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="md7-am-2Uc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="4do-Bx-hRc">
+                                <rect key="frame" x="10" y="30" width="345" height="39.5"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zFa-gh-zNY" id="hir-Pn-Dnq"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="0R7-FK-1Bf" firstAttribute="leading" secondItem="R39-Is-g2T" secondAttribute="leading" constant="10" id="0tI-lu-GgQ"/>
+                            <constraint firstItem="0R7-FK-1Bf" firstAttribute="top" secondItem="R39-Is-g2T" secondAttribute="top" constant="5" id="2nj-Ev-fd4"/>
+                            <constraint firstAttribute="bottom" secondItem="4do-Bx-hRc" secondAttribute="bottom" constant="5.5" id="5n1-jz-4bA"/>
+                            <constraint firstItem="4do-Bx-hRc" firstAttribute="leading" secondItem="R39-Is-g2T" secondAttribute="leading" constant="10" id="DS8-kD-ekO"/>
+                            <constraint firstItem="4do-Bx-hRc" firstAttribute="top" secondItem="0R7-FK-1Bf" secondAttribute="bottom" constant="5" id="cT8-IJ-I41"/>
+                            <constraint firstItem="0R7-FK-1Bf" firstAttribute="width" secondItem="R39-Is-g2T" secondAttribute="width" multiplier="0.4" id="jUB-lW-IBO"/>
+                            <constraint firstAttribute="trailing" secondItem="4do-Bx-hRc" secondAttribute="trailing" constant="10" id="sd4-uC-N0n"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="R39-Is-g2T" firstAttribute="leading" secondItem="Vh5-su-pCJ" secondAttribute="leading" constant="5" id="4Zr-jq-xBM"/>
+                    <constraint firstItem="R39-Is-g2T" firstAttribute="top" secondItem="Vh5-su-pCJ" secondAttribute="top" constant="5" id="ovB-DR-fPQ"/>
+                    <constraint firstAttribute="bottom" secondItem="R39-Is-g2T" secondAttribute="bottom" constant="5" id="tBF-Yx-tFV"/>
+                    <constraint firstAttribute="trailing" secondItem="R39-Is-g2T" secondAttribute="trailing" constant="5" id="uUM-mv-K7L"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lblName" destination="0R7-FK-1Bf" id="cxp-C6-jyk"/>
+                <outlet property="textField" destination="4do-Bx-hRc" id="1cJ-EO-pNx"/>
+            </connections>
+            <point key="canvasLocation" x="4" y="43.628185907046479"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,880 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		701E3B13243F1FAA00FFB135 /* ReporDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 701E3B11243F1FAA00FFB135 /* ReporDemo.xcdatamodeld */; };
+		701E3B1E243F209E00FFB135 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E3B16243F209E00FFB135 /* CoreDataManager.swift */; };
+		701E3B21243F209E00FFB135 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E3B1B243F209E00FFB135 /* CoreDataStack.swift */; };
+		701E3B22243F209E00FFB135 /* NSPersistentStoreCoordinator+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E3B1C243F209E00FFB135 /* NSPersistentStoreCoordinator+Helper.swift */; };
+		701E3B23243F209E00FFB135 /* NSMangedObjectContext+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E3B1D243F209E00FFB135 /* NSMangedObjectContext+Helper.swift */; };
+		701E3B2A243F21E700FFB135 /* CoreDataManager+ReportDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E3B29243F21E700FFB135 /* CoreDataManager+ReportDB.swift */; };
+		701E3B2E243F58CF00FFB135 /* UIView+NetworkActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E3B2D243F58CF00FFB135 /* UIView+NetworkActivity.swift */; };
+		707ED8F6243C649000E989B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707ED8F5243C649000E989B6 /* AppDelegate.swift */; };
+		707ED8FF243C649100E989B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 707ED8FE243C649100E989B6 /* Assets.xcassets */; };
+		707ED90D243C649100E989B6 /* Reportlisting_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707ED90C243C649100E989B6 /* Reportlisting_DemoTests.swift */; };
+		707ED918243C649100E989B6 /* Reportlisting_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707ED917243C649100E989B6 /* Reportlisting_DemoUITests.swift */; };
+		707ED926243C6D0800E989B6 /* ReportListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707ED925243C6D0800E989B6 /* ReportListViewController.swift */; };
+		70A6E0B2243C74ED00C3C36D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A6E0AE243C74ED00C3C36D /* Main.storyboard */; };
+		70A6E0B3243C74ED00C3C36D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A6E0B0243C74ED00C3C36D /* LaunchScreen.storyboard */; };
+		70A6E0B9243C778200C3C36D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0B6243C778200C3C36D /* UIColor+Extension.swift */; };
+		70A6E0BA243C778200C3C36D /* UIAlertViewController+ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0B7243C778200C3C36D /* UIAlertViewController+ErrorMessage.swift */; };
+		70A6E0BE243C7C4200C3C36D /* CreateReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0BD243C7C4200C3C36D /* CreateReportViewController.swift */; };
+		70A6E0C0243CA7EB00C3C36D /* ReportDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0BF243CA7EB00C3C36D /* ReportDetailsViewController.swift */; };
+		70A6E0C2243CA88100C3C36D /* ReportDemo+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0C1243CA88100C3C36D /* ReportDemo+Utility.swift */; };
+		70A6E0C6243CA9E400C3C36D /* ReportListHeaderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0C5243CA9E400C3C36D /* ReportListHeaderTableCell.swift */; };
+		70A6E0C8243CA9F600C3C36D /* ReportListHeaderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A6E0C7243CA9F600C3C36D /* ReportListHeaderTableCell.xib */; };
+		70A6E0CA243CAA1100C3C36D /* ReportListItemTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A6E0C9243CAA1100C3C36D /* ReportListItemTableCell.xib */; };
+		70A6E0CC243CAA2400C3C36D /* ReportListItemTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0CB243CAA2400C3C36D /* ReportListItemTableCell.swift */; };
+		70A6E0CF243CACCA00C3C36D /* CreateReportUserNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0CE243CACCA00C3C36D /* CreateReportUserNameCell.swift */; };
+		70A6E0D1243CAD0C00C3C36D /* CreateReportTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0D0243CAD0C00C3C36D /* CreateReportTextFieldCell.swift */; };
+		70A6E0D3243CAD3200C3C36D /* CreateReportMultilineTextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0D2243CAD3200C3C36D /* CreateReportMultilineTextInputCell.swift */; };
+		70A6E0D5243CAD7000C3C36D /* CreateReportDropdownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0D4243CAD7000C3C36D /* CreateReportDropdownCell.swift */; };
+		70A6E0D7243CAD9F00C3C36D /* CreateReportUserNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A6E0D6243CAD9F00C3C36D /* CreateReportUserNameCell.xib */; };
+		70A6E0D9243CADAE00C3C36D /* CreateReportTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A6E0D8243CADAE00C3C36D /* CreateReportTextFieldCell.xib */; };
+		70A6E0DB243CADBE00C3C36D /* CreateReportMultilineTextInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A6E0DA243CADBE00C3C36D /* CreateReportMultilineTextInputCell.xib */; };
+		70A6E0DD243CADD800C3C36D /* CreateReportDropdownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A6E0DC243CADD800C3C36D /* CreateReportDropdownCell.xib */; };
+		70A6E0E0243CB00900C3C36D /* ReportDetailsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A6E0DF243CB00900C3C36D /* ReportDetailsTableCell.xib */; };
+		70A6E0E2243CB01C00C3C36D /* ReportDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0E1243CB01C00C3C36D /* ReportDetailsTableCell.swift */; };
+		70A6E0E5243CBAD100C3C36D /* ReportDropDownOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0E4243CBAD100C3C36D /* ReportDropDownOptionsCell.swift */; };
+		70A6E0E7243CBAE500C3C36D /* ReportDropDownOptionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A6E0E6243CBAE500C3C36D /* ReportDropDownOptionsCell.xib */; };
+		70A6E0EC243D01F600C3C36D /* reports.json in Resources */ = {isa = PBXBuildFile; fileRef = 70A6E0EB243D01F600C3C36D /* reports.json */; };
+		70A6E0EE243D0F1400C3C36D /* ReportDropdownMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0ED243D0F1400C3C36D /* ReportDropdownMenuViewController.swift */; };
+		70A6E0F1243D187300C3C36D /* ReportFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6E0F0243D187300C3C36D /* ReportFieldModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		707ED909243C649100E989B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 707ED8EA243C649000E989B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 707ED8F1243C649000E989B6;
+			remoteInfo = Reportlisting_Demo;
+		};
+		707ED914243C649100E989B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 707ED8EA243C649000E989B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 707ED8F1243C649000E989B6;
+			remoteInfo = Reportlisting_Demo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		701E3B12243F1FAA00FFB135 /* ReporDemo_Datamodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReporDemo_Datamodel.xcdatamodel; sourceTree = "<group>"; };
+		701E3B16243F209E00FFB135 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		701E3B1B243F209E00FFB135 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		701E3B1C243F209E00FFB135 /* NSPersistentStoreCoordinator+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPersistentStoreCoordinator+Helper.swift"; sourceTree = "<group>"; };
+		701E3B1D243F209E00FFB135 /* NSMangedObjectContext+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMangedObjectContext+Helper.swift"; sourceTree = "<group>"; };
+		701E3B24243F20FC00FFB135 /* ReportDB+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportDB+CoreDataClass.swift"; sourceTree = "<group>"; };
+		701E3B25243F20FC00FFB135 /* ReportDB+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportDB+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		701E3B29243F21E700FFB135 /* CoreDataManager+ReportDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+ReportDB.swift"; sourceTree = "<group>"; };
+		701E3B2D243F58CF00FFB135 /* UIView+NetworkActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+NetworkActivity.swift"; sourceTree = "<group>"; };
+		707ED8F2243C649000E989B6 /* Reportlisting_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reportlisting_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		707ED8F5243C649000E989B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		707ED8FE243C649100E989B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		707ED903243C649100E989B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		707ED908243C649100E989B6 /* Reportlisting_DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Reportlisting_DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		707ED90C243C649100E989B6 /* Reportlisting_DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reportlisting_DemoTests.swift; sourceTree = "<group>"; };
+		707ED90E243C649100E989B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		707ED913243C649100E989B6 /* Reportlisting_DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Reportlisting_DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		707ED917243C649100E989B6 /* Reportlisting_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reportlisting_DemoUITests.swift; sourceTree = "<group>"; };
+		707ED919243C649100E989B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		707ED925243C6D0800E989B6 /* ReportListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListViewController.swift; sourceTree = "<group>"; };
+		70A6E0AF243C74ED00C3C36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		70A6E0B1243C74ED00C3C36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		70A6E0B6243C778200C3C36D /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		70A6E0B7243C778200C3C36D /* UIAlertViewController+ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertViewController+ErrorMessage.swift"; sourceTree = "<group>"; };
+		70A6E0BD243C7C4200C3C36D /* CreateReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReportViewController.swift; sourceTree = "<group>"; };
+		70A6E0BF243CA7EB00C3C36D /* ReportDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewController.swift; sourceTree = "<group>"; };
+		70A6E0C1243CA88100C3C36D /* ReportDemo+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportDemo+Utility.swift"; sourceTree = "<group>"; };
+		70A6E0C5243CA9E400C3C36D /* ReportListHeaderTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListHeaderTableCell.swift; sourceTree = "<group>"; };
+		70A6E0C7243CA9F600C3C36D /* ReportListHeaderTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportListHeaderTableCell.xib; sourceTree = "<group>"; };
+		70A6E0C9243CAA1100C3C36D /* ReportListItemTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportListItemTableCell.xib; sourceTree = "<group>"; };
+		70A6E0CB243CAA2400C3C36D /* ReportListItemTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListItemTableCell.swift; sourceTree = "<group>"; };
+		70A6E0CE243CACCA00C3C36D /* CreateReportUserNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReportUserNameCell.swift; sourceTree = "<group>"; };
+		70A6E0D0243CAD0C00C3C36D /* CreateReportTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReportTextFieldCell.swift; sourceTree = "<group>"; };
+		70A6E0D2243CAD3200C3C36D /* CreateReportMultilineTextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReportMultilineTextInputCell.swift; sourceTree = "<group>"; };
+		70A6E0D4243CAD7000C3C36D /* CreateReportDropdownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReportDropdownCell.swift; sourceTree = "<group>"; };
+		70A6E0D6243CAD9F00C3C36D /* CreateReportUserNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateReportUserNameCell.xib; sourceTree = "<group>"; };
+		70A6E0D8243CADAE00C3C36D /* CreateReportTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateReportTextFieldCell.xib; sourceTree = "<group>"; };
+		70A6E0DA243CADBE00C3C36D /* CreateReportMultilineTextInputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateReportMultilineTextInputCell.xib; sourceTree = "<group>"; };
+		70A6E0DC243CADD800C3C36D /* CreateReportDropdownCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateReportDropdownCell.xib; sourceTree = "<group>"; };
+		70A6E0DF243CB00900C3C36D /* ReportDetailsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportDetailsTableCell.xib; sourceTree = "<group>"; };
+		70A6E0E1243CB01C00C3C36D /* ReportDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsTableCell.swift; sourceTree = "<group>"; };
+		70A6E0E4243CBAD100C3C36D /* ReportDropDownOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDropDownOptionsCell.swift; sourceTree = "<group>"; };
+		70A6E0E6243CBAE500C3C36D /* ReportDropDownOptionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportDropDownOptionsCell.xib; sourceTree = "<group>"; };
+		70A6E0EB243D01F600C3C36D /* reports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reports.json; sourceTree = "<group>"; };
+		70A6E0ED243D0F1400C3C36D /* ReportDropdownMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDropdownMenuViewController.swift; sourceTree = "<group>"; };
+		70A6E0F0243D187300C3C36D /* ReportFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFieldModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		707ED8EF243C649000E989B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707ED905243C649100E989B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707ED910243C649100E989B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		701E3B14243F208100FFB135 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				701E3B11243F1FAA00FFB135 /* ReporDemo.xcdatamodeld */,
+				701E3B15243F209E00FFB135 /* CoreDataManager */,
+				701E3B1A243F209E00FFB135 /* CoreDataStack */,
+				701E3B17243F209E00FFB135 /* ManagedObjectModel */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		701E3B15243F209E00FFB135 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				701E3B16243F209E00FFB135 /* CoreDataManager.swift */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		701E3B17243F209E00FFB135 /* ManagedObjectModel */ = {
+			isa = PBXGroup;
+			children = (
+				701E3B24243F20FC00FFB135 /* ReportDB+CoreDataClass.swift */,
+				701E3B25243F20FC00FFB135 /* ReportDB+CoreDataProperties.swift */,
+			);
+			path = ManagedObjectModel;
+			sourceTree = "<group>";
+		};
+		701E3B1A243F209E00FFB135 /* CoreDataStack */ = {
+			isa = PBXGroup;
+			children = (
+				701E3B1B243F209E00FFB135 /* CoreDataStack.swift */,
+				701E3B1C243F209E00FFB135 /* NSPersistentStoreCoordinator+Helper.swift */,
+				701E3B1D243F209E00FFB135 /* NSMangedObjectContext+Helper.swift */,
+			);
+			path = CoreDataStack;
+			sourceTree = "<group>";
+		};
+		701E3B28243F21BB00FFB135 /* CoredataManager+ReportDB */ = {
+			isa = PBXGroup;
+			children = (
+				701E3B29243F21E700FFB135 /* CoreDataManager+ReportDB.swift */,
+			);
+			path = "CoredataManager+ReportDB";
+			sourceTree = "<group>";
+		};
+		707ED8E9243C649000E989B6 = {
+			isa = PBXGroup;
+			children = (
+				707ED8F4243C649000E989B6 /* Reportlisting_Demo */,
+				707ED90B243C649100E989B6 /* Reportlisting_DemoTests */,
+				707ED916243C649100E989B6 /* Reportlisting_DemoUITests */,
+				707ED8F3243C649000E989B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		707ED8F3243C649000E989B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				707ED8F2243C649000E989B6 /* Reportlisting_Demo.app */,
+				707ED908243C649100E989B6 /* Reportlisting_DemoTests.xctest */,
+				707ED913243C649100E989B6 /* Reportlisting_DemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		707ED8F4243C649000E989B6 /* Reportlisting_Demo */ = {
+			isa = PBXGroup;
+			children = (
+				70A6E0BC243C7C0200C3C36D /* Common */,
+				70A6E0B4243C76E900C3C36D /* Libs */,
+				707ED929243C6E1F00E989B6 /* AppDelegate */,
+				70A6E0EF243D180200C3C36D /* Models */,
+				707ED92B243C6E3F00E989B6 /* ViewControllers */,
+				707ED92C243C6E5700E989B6 /* Storyboards */,
+				707ED92D243C6E7400E989B6 /* Resources */,
+				707ED903243C649100E989B6 /* Info.plist */,
+			);
+			path = Reportlisting_Demo;
+			sourceTree = "<group>";
+		};
+		707ED90B243C649100E989B6 /* Reportlisting_DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				707ED90C243C649100E989B6 /* Reportlisting_DemoTests.swift */,
+				707ED90E243C649100E989B6 /* Info.plist */,
+			);
+			path = Reportlisting_DemoTests;
+			sourceTree = "<group>";
+		};
+		707ED916243C649100E989B6 /* Reportlisting_DemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				707ED917243C649100E989B6 /* Reportlisting_DemoUITests.swift */,
+				707ED919243C649100E989B6 /* Info.plist */,
+			);
+			path = Reportlisting_DemoUITests;
+			sourceTree = "<group>";
+		};
+		707ED929243C6E1F00E989B6 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				707ED8F5243C649000E989B6 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		707ED92B243C6E3F00E989B6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				70A6E0C3243CA91300C3C36D /* ReportTableCells */,
+				707ED925243C6D0800E989B6 /* ReportListViewController.swift */,
+				70A6E0BD243C7C4200C3C36D /* CreateReportViewController.swift */,
+				70A6E0BF243CA7EB00C3C36D /* ReportDetailsViewController.swift */,
+				70A6E0ED243D0F1400C3C36D /* ReportDropdownMenuViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		707ED92C243C6E5700E989B6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				70A6E0B0243C74ED00C3C36D /* LaunchScreen.storyboard */,
+				70A6E0AE243C74ED00C3C36D /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		707ED92D243C6E7400E989B6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				707ED8FE243C649100E989B6 /* Assets.xcassets */,
+				70A6E0EB243D01F600C3C36D /* reports.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		70A6E0B4243C76E900C3C36D /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				701E3B28243F21BB00FFB135 /* CoredataManager+ReportDB */,
+				701E3B14243F208100FFB135 /* CoreData */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		70A6E0B5243C76FB00C3C36D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				701E3B2D243F58CF00FFB135 /* UIView+NetworkActivity.swift */,
+				70A6E0B7243C778200C3C36D /* UIAlertViewController+ErrorMessage.swift */,
+				70A6E0B6243C778200C3C36D /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		70A6E0BC243C7C0200C3C36D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				70A6E0C1243CA88100C3C36D /* ReportDemo+Utility.swift */,
+				70A6E0B5243C76FB00C3C36D /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		70A6E0C3243CA91300C3C36D /* ReportTableCells */ = {
+			isa = PBXGroup;
+			children = (
+				70A6E0E3243CBAA900C3C36D /* report dropdown cell */,
+				70A6E0DE243CAFD200C3C36D /* report details */,
+				70A6E0CD243CAB0500C3C36D /* create report */,
+				70A6E0C4243CA9B400C3C36D /* report list */,
+			);
+			path = ReportTableCells;
+			sourceTree = "<group>";
+		};
+		70A6E0C4243CA9B400C3C36D /* report list */ = {
+			isa = PBXGroup;
+			children = (
+				70A6E0C5243CA9E400C3C36D /* ReportListHeaderTableCell.swift */,
+				70A6E0C7243CA9F600C3C36D /* ReportListHeaderTableCell.xib */,
+				70A6E0CB243CAA2400C3C36D /* ReportListItemTableCell.swift */,
+				70A6E0C9243CAA1100C3C36D /* ReportListItemTableCell.xib */,
+			);
+			path = "report list";
+			sourceTree = "<group>";
+		};
+		70A6E0CD243CAB0500C3C36D /* create report */ = {
+			isa = PBXGroup;
+			children = (
+				70A6E0CE243CACCA00C3C36D /* CreateReportUserNameCell.swift */,
+				70A6E0D6243CAD9F00C3C36D /* CreateReportUserNameCell.xib */,
+				70A6E0D0243CAD0C00C3C36D /* CreateReportTextFieldCell.swift */,
+				70A6E0D8243CADAE00C3C36D /* CreateReportTextFieldCell.xib */,
+				70A6E0D2243CAD3200C3C36D /* CreateReportMultilineTextInputCell.swift */,
+				70A6E0DA243CADBE00C3C36D /* CreateReportMultilineTextInputCell.xib */,
+				70A6E0D4243CAD7000C3C36D /* CreateReportDropdownCell.swift */,
+				70A6E0DC243CADD800C3C36D /* CreateReportDropdownCell.xib */,
+			);
+			path = "create report";
+			sourceTree = "<group>";
+		};
+		70A6E0DE243CAFD200C3C36D /* report details */ = {
+			isa = PBXGroup;
+			children = (
+				70A6E0E1243CB01C00C3C36D /* ReportDetailsTableCell.swift */,
+				70A6E0DF243CB00900C3C36D /* ReportDetailsTableCell.xib */,
+			);
+			path = "report details";
+			sourceTree = "<group>";
+		};
+		70A6E0E3243CBAA900C3C36D /* report dropdown cell */ = {
+			isa = PBXGroup;
+			children = (
+				70A6E0E4243CBAD100C3C36D /* ReportDropDownOptionsCell.swift */,
+				70A6E0E6243CBAE500C3C36D /* ReportDropDownOptionsCell.xib */,
+			);
+			path = "report dropdown cell";
+			sourceTree = "<group>";
+		};
+		70A6E0EF243D180200C3C36D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				70A6E0F0243D187300C3C36D /* ReportFieldModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		707ED8F1243C649000E989B6 /* Reportlisting_Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 707ED91C243C649100E989B6 /* Build configuration list for PBXNativeTarget "Reportlisting_Demo" */;
+			buildPhases = (
+				707ED8EE243C649000E989B6 /* Sources */,
+				707ED8EF243C649000E989B6 /* Frameworks */,
+				707ED8F0243C649000E989B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Reportlisting_Demo;
+			productName = Reportlisting_Demo;
+			productReference = 707ED8F2243C649000E989B6 /* Reportlisting_Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		707ED907243C649100E989B6 /* Reportlisting_DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 707ED91F243C649100E989B6 /* Build configuration list for PBXNativeTarget "Reportlisting_DemoTests" */;
+			buildPhases = (
+				707ED904243C649100E989B6 /* Sources */,
+				707ED905243C649100E989B6 /* Frameworks */,
+				707ED906243C649100E989B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				707ED90A243C649100E989B6 /* PBXTargetDependency */,
+			);
+			name = Reportlisting_DemoTests;
+			productName = Reportlisting_DemoTests;
+			productReference = 707ED908243C649100E989B6 /* Reportlisting_DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		707ED912243C649100E989B6 /* Reportlisting_DemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 707ED922243C649100E989B6 /* Build configuration list for PBXNativeTarget "Reportlisting_DemoUITests" */;
+			buildPhases = (
+				707ED90F243C649100E989B6 /* Sources */,
+				707ED910243C649100E989B6 /* Frameworks */,
+				707ED911243C649100E989B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				707ED915243C649100E989B6 /* PBXTargetDependency */,
+			);
+			name = Reportlisting_DemoUITests;
+			productName = Reportlisting_DemoUITests;
+			productReference = 707ED913243C649100E989B6 /* Reportlisting_DemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		707ED8EA243C649000E989B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Suman Chatterjee";
+				TargetAttributes = {
+					707ED8F1243C649000E989B6 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					707ED907243C649100E989B6 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 707ED8F1243C649000E989B6;
+					};
+					707ED912243C649100E989B6 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 707ED8F1243C649000E989B6;
+					};
+				};
+			};
+			buildConfigurationList = 707ED8ED243C649000E989B6 /* Build configuration list for PBXProject "Reportlisting_Demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 707ED8E9243C649000E989B6;
+			productRefGroup = 707ED8F3243C649000E989B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				707ED8F1243C649000E989B6 /* Reportlisting_Demo */,
+				707ED907243C649100E989B6 /* Reportlisting_DemoTests */,
+				707ED912243C649100E989B6 /* Reportlisting_DemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		707ED8F0243C649000E989B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A6E0B3243C74ED00C3C36D /* LaunchScreen.storyboard in Resources */,
+				70A6E0D9243CADAE00C3C36D /* CreateReportTextFieldCell.xib in Resources */,
+				70A6E0E7243CBAE500C3C36D /* ReportDropDownOptionsCell.xib in Resources */,
+				70A6E0D7243CAD9F00C3C36D /* CreateReportUserNameCell.xib in Resources */,
+				70A6E0CA243CAA1100C3C36D /* ReportListItemTableCell.xib in Resources */,
+				707ED8FF243C649100E989B6 /* Assets.xcassets in Resources */,
+				70A6E0E0243CB00900C3C36D /* ReportDetailsTableCell.xib in Resources */,
+				70A6E0B2243C74ED00C3C36D /* Main.storyboard in Resources */,
+				70A6E0DD243CADD800C3C36D /* CreateReportDropdownCell.xib in Resources */,
+				70A6E0C8243CA9F600C3C36D /* ReportListHeaderTableCell.xib in Resources */,
+				70A6E0DB243CADBE00C3C36D /* CreateReportMultilineTextInputCell.xib in Resources */,
+				70A6E0EC243D01F600C3C36D /* reports.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707ED906243C649100E989B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707ED911243C649100E989B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		707ED8EE243C649000E989B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A6E0EE243D0F1400C3C36D /* ReportDropdownMenuViewController.swift in Sources */,
+				70A6E0BE243C7C4200C3C36D /* CreateReportViewController.swift in Sources */,
+				701E3B2E243F58CF00FFB135 /* UIView+NetworkActivity.swift in Sources */,
+				70A6E0D5243CAD7000C3C36D /* CreateReportDropdownCell.swift in Sources */,
+				701E3B1E243F209E00FFB135 /* CoreDataManager.swift in Sources */,
+				70A6E0F1243D187300C3C36D /* ReportFieldModel.swift in Sources */,
+				701E3B23243F209E00FFB135 /* NSMangedObjectContext+Helper.swift in Sources */,
+				701E3B13243F1FAA00FFB135 /* ReporDemo.xcdatamodeld in Sources */,
+				70A6E0C2243CA88100C3C36D /* ReportDemo+Utility.swift in Sources */,
+				70A6E0CC243CAA2400C3C36D /* ReportListItemTableCell.swift in Sources */,
+				707ED926243C6D0800E989B6 /* ReportListViewController.swift in Sources */,
+				70A6E0C6243CA9E400C3C36D /* ReportListHeaderTableCell.swift in Sources */,
+				70A6E0BA243C778200C3C36D /* UIAlertViewController+ErrorMessage.swift in Sources */,
+				70A6E0E2243CB01C00C3C36D /* ReportDetailsTableCell.swift in Sources */,
+				707ED8F6243C649000E989B6 /* AppDelegate.swift in Sources */,
+				70A6E0B9243C778200C3C36D /* UIColor+Extension.swift in Sources */,
+				701E3B2A243F21E700FFB135 /* CoreDataManager+ReportDB.swift in Sources */,
+				70A6E0C0243CA7EB00C3C36D /* ReportDetailsViewController.swift in Sources */,
+				701E3B22243F209E00FFB135 /* NSPersistentStoreCoordinator+Helper.swift in Sources */,
+				70A6E0D3243CAD3200C3C36D /* CreateReportMultilineTextInputCell.swift in Sources */,
+				70A6E0CF243CACCA00C3C36D /* CreateReportUserNameCell.swift in Sources */,
+				701E3B21243F209E00FFB135 /* CoreDataStack.swift in Sources */,
+				70A6E0D1243CAD0C00C3C36D /* CreateReportTextFieldCell.swift in Sources */,
+				70A6E0E5243CBAD100C3C36D /* ReportDropDownOptionsCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707ED904243C649100E989B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				707ED90D243C649100E989B6 /* Reportlisting_DemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707ED90F243C649100E989B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				707ED918243C649100E989B6 /* Reportlisting_DemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		707ED90A243C649100E989B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 707ED8F1243C649000E989B6 /* Reportlisting_Demo */;
+			targetProxy = 707ED909243C649100E989B6 /* PBXContainerItemProxy */;
+		};
+		707ED915243C649100E989B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 707ED8F1243C649000E989B6 /* Reportlisting_Demo */;
+			targetProxy = 707ED914243C649100E989B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		70A6E0AE243C74ED00C3C36D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70A6E0AF243C74ED00C3C36D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		70A6E0B0243C74ED00C3C36D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70A6E0B1243C74ED00C3C36D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		707ED91A243C649100E989B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		707ED91B243C649100E989B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		707ED91D243C649100E989B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CH59VF4S2;
+				INFOPLIST_FILE = Reportlisting_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.suman.Reportlisting-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		707ED91E243C649100E989B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CH59VF4S2;
+				INFOPLIST_FILE = Reportlisting_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.suman.Reportlisting-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		707ED920243C649100E989B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CH59VF4S2;
+				INFOPLIST_FILE = Reportlisting_DemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.suman.Reportlisting-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reportlisting_Demo.app/Reportlisting_Demo";
+			};
+			name = Debug;
+		};
+		707ED921243C649100E989B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CH59VF4S2;
+				INFOPLIST_FILE = Reportlisting_DemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.suman.Reportlisting-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reportlisting_Demo.app/Reportlisting_Demo";
+			};
+			name = Release;
+		};
+		707ED923243C649100E989B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CH59VF4S2;
+				INFOPLIST_FILE = Reportlisting_DemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.suman.Reportlisting-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Reportlisting_Demo;
+			};
+			name = Debug;
+		};
+		707ED924243C649100E989B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CH59VF4S2;
+				INFOPLIST_FILE = Reportlisting_DemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.suman.Reportlisting-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Reportlisting_Demo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		707ED8ED243C649000E989B6 /* Build configuration list for PBXProject "Reportlisting_Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				707ED91A243C649100E989B6 /* Debug */,
+				707ED91B243C649100E989B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		707ED91C243C649100E989B6 /* Build configuration list for PBXNativeTarget "Reportlisting_Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				707ED91D243C649100E989B6 /* Debug */,
+				707ED91E243C649100E989B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		707ED91F243C649100E989B6 /* Build configuration list for PBXNativeTarget "Reportlisting_DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				707ED920243C649100E989B6 /* Debug */,
+				707ED921243C649100E989B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		707ED922243C649100E989B6 /* Build configuration list for PBXNativeTarget "Reportlisting_DemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				707ED923243C649100E989B6 /* Debug */,
+				707ED924243C649100E989B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		701E3B11243F1FAA00FFB135 /* ReporDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				701E3B12243F1FAA00FFB135 /* ReporDemo_Datamodel.xcdatamodel */,
+			);
+			currentVersion = 701E3B12243F1FAA00FFB135 /* ReporDemo_Datamodel.xcdatamodel */;
+			path = ReporDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 707ED8EA243C649000E989B6 /* Project object */;
+}

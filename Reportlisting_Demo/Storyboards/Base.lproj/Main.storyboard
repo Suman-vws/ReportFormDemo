@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Dd-Ml-JZf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Report List-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ReportListViewController" customModule="Reportlisting_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBA-hC-Ahb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="MoS-r2-4p7"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9Ms-P1-myf"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No reports available, tap the plus button to add report." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvf-f0-nvv">
+                                <rect key="frame" x="87" y="427" width="240" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="HV0-BT-cL3"/>
+                                    <constraint firstAttribute="width" constant="240" id="QDt-Bc-h9R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eBA-hC-Ahb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ASa-DQ-HZe"/>
+                            <constraint firstItem="rvf-f0-nvv" firstAttribute="centerX" secondItem="eBA-hC-Ahb" secondAttribute="centerX" id="H4e-lW-cnZ"/>
+                            <constraint firstItem="rvf-f0-nvv" firstAttribute="centerY" secondItem="eBA-hC-Ahb" secondAttribute="centerY" id="idc-v6-2vX"/>
+                            <constraint firstItem="eBA-hC-Ahb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tpg-n2-EIA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eBA-hC-Ahb" secondAttribute="trailing" id="xFF-54-PJz"/>
+                            <constraint firstItem="eBA-hC-Ahb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="yFk-EV-tGG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Report List" id="nYY-LS-pAO"/>
+                    <connections>
+                        <outlet property="lblNoReportsAvailable" destination="rvf-f0-nvv" id="TKp-WB-xRT"/>
+                        <outlet property="tableView" destination="eBA-hC-Ahb" id="pBZ-hv-YRk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037.68115942029" y="42.857142857142854"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6Vl-UJ-krI">
+            <objects>
+                <navigationController id="3Dd-Ml-JZf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WEu-29-IB0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="irk-05-5yU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LJ6-MZ-yeX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="242" y="43"/>
+        </scene>
+        <!--CreateReportViewController-->
+        <scene sceneID="YDZ-T5-4do">
+            <objects>
+                <viewController storyboardIdentifier="CreateReportViewController" title="CreateReportViewController" id="S7a-xX-Wur" customClass="CreateReportViewController" customModule="Reportlisting_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1qa-x7-khz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bOe-PA-qc5">
+                                <rect key="frame" x="0.0" y="46" width="414" height="850"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="S7a-xX-Wur" id="73C-pO-R8t"/>
+                                    <outlet property="delegate" destination="S7a-xX-Wur" id="IhU-6d-FdG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bOe-PA-qc5" firstAttribute="bottom" secondItem="wnu-2V-wMI" secondAttribute="bottom" constant="34" id="FtT-Ea-UfV"/>
+                            <constraint firstItem="bOe-PA-qc5" firstAttribute="leading" secondItem="wnu-2V-wMI" secondAttribute="leading" id="HKX-Bt-06P"/>
+                            <constraint firstItem="wnu-2V-wMI" firstAttribute="trailing" secondItem="bOe-PA-qc5" secondAttribute="trailing" id="JlC-mE-kD4"/>
+                            <constraint firstItem="bOe-PA-qc5" firstAttribute="top" secondItem="wnu-2V-wMI" secondAttribute="top" constant="2" id="Xvs-g2-0af"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wnu-2V-wMI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Report List" id="Pow-3b-C04"/>
+                    <connections>
+                        <outlet property="tableView" destination="bOe-PA-qc5" id="dZK-qY-cd4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JHJ-0V-KWk" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1752" y="43"/>
+        </scene>
+        <!--ReportDetailsViewController-->
+        <scene sceneID="OfG-mw-tdS">
+            <objects>
+                <viewController storyboardIdentifier="ReportDetailsViewController" title="ReportDetailsViewController" id="2Oc-XN-IBX" customClass="ReportDetailsViewController" customModule="Reportlisting_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cOx-oG-lnI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NoI-Vl-deY">
+                                <rect key="frame" x="0.0" y="46" width="414" height="850"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2Oc-XN-IBX" id="msj-Aw-Inz"/>
+                                    <outlet property="delegate" destination="2Oc-XN-IBX" id="5l6-IO-3tj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NoI-Vl-deY" firstAttribute="bottom" secondItem="Wia-Aw-Vpz" secondAttribute="bottom" constant="34" id="BB9-OR-ede"/>
+                            <constraint firstItem="Wia-Aw-Vpz" firstAttribute="trailing" secondItem="NoI-Vl-deY" secondAttribute="trailing" id="BmR-09-qW1"/>
+                            <constraint firstItem="NoI-Vl-deY" firstAttribute="top" secondItem="Wia-Aw-Vpz" secondAttribute="top" constant="2" id="kPt-z7-qr4"/>
+                            <constraint firstItem="NoI-Vl-deY" firstAttribute="leading" secondItem="Wia-Aw-Vpz" secondAttribute="leading" id="ofl-nl-hFn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wia-Aw-Vpz"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Report List" id="vZx-O3-Tyr"/>
+                    <connections>
+                        <outlet property="tableView" destination="NoI-Vl-deY" id="nzV-7N-GYS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EzJ-AZ-YRv" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2559" y="43"/>
+        </scene>
+        <!--ReportDropdownMenuViewController-->
+        <scene sceneID="U4n-Oz-gTl">
+            <objects>
+                <viewController storyboardIdentifier="ReportDropdownMenuViewController" title="ReportDropdownMenuViewController" id="PTR-hn-ctV" customClass="ReportDropdownMenuViewController" customModule="Reportlisting_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hLt-4n-Ogf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TN8-fw-DAH">
+                                <rect key="frame" x="0.0" y="46" width="414" height="850"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="PTR-hn-ctV" id="sHf-VK-EIr"/>
+                                    <outlet property="delegate" destination="PTR-hn-ctV" id="ee8-sS-ASp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TN8-fw-DAH" firstAttribute="leading" secondItem="ZId-M8-ffg" secondAttribute="leading" id="KPu-cH-FMd"/>
+                            <constraint firstItem="ZId-M8-ffg" firstAttribute="trailing" secondItem="TN8-fw-DAH" secondAttribute="trailing" id="MnB-w4-ScX"/>
+                            <constraint firstItem="TN8-fw-DAH" firstAttribute="bottom" secondItem="ZId-M8-ffg" secondAttribute="bottom" constant="34" id="fia-BN-UM4"/>
+                            <constraint firstItem="TN8-fw-DAH" firstAttribute="top" secondItem="ZId-M8-ffg" secondAttribute="top" constant="2" id="hqR-fj-jkt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZId-M8-ffg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Report List" id="MJa-ql-LlB"/>
+                    <connections>
+                        <outlet property="tableView" destination="TN8-fw-DAH" id="2RM-bN-2HH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uc9-UH-t40" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3287" y="43"/>
+        </scene>
+    </scenes>
+</document>

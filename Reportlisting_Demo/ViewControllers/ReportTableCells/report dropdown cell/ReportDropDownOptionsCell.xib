@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReportDropDownOptionsCell" rowHeight="51" id="R0T-rq-9QK" customClass="ReportDropDownOptionsCell" customModule="Reportlisting_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R0T-rq-9QK" id="sDF-Ro-D7J">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFr-KK-Aqr" userLabel="ConatinerView">
+                        <rect key="frame" x="5" y="5" width="365" height="50"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncheck" translatesAutoresizingMaskIntoConstraints="NO" id="PcW-DF-Kfx" customClass="check">
+                                <rect key="frame" x="15" y="7.5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="f9g-YK-eKK"/>
+                                    <constraint firstAttribute="width" constant="35" id="nwf-7m-8XC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLY-4F-yfC">
+                                <rect key="frame" x="60" y="12.5" width="290" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="IbS-X3-u3a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="PcW-DF-Kfx" firstAttribute="centerY" secondItem="NFr-KK-Aqr" secondAttribute="centerY" id="RVK-IW-4dZ"/>
+                            <constraint firstItem="PcW-DF-Kfx" firstAttribute="leading" secondItem="NFr-KK-Aqr" secondAttribute="leading" constant="15" id="Rc6-sm-YbV"/>
+                            <constraint firstItem="tLY-4F-yfC" firstAttribute="leading" secondItem="PcW-DF-Kfx" secondAttribute="trailing" constant="10" id="ToO-K2-Vql"/>
+                            <constraint firstItem="tLY-4F-yfC" firstAttribute="centerY" secondItem="PcW-DF-Kfx" secondAttribute="centerY" id="XLn-dV-LQA"/>
+                            <constraint firstAttribute="bottom" secondItem="tLY-4F-yfC" secondAttribute="bottom" constant="12.5" id="Yfq-Pk-TRo"/>
+                            <constraint firstAttribute="trailing" secondItem="tLY-4F-yfC" secondAttribute="trailing" constant="15" id="tMo-Zd-F2t"/>
+                            <constraint firstItem="tLY-4F-yfC" firstAttribute="top" secondItem="NFr-KK-Aqr" secondAttribute="top" constant="12.5" id="urL-56-Y8g"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="tMo-Zd-F2t"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="tMo-Zd-F2t"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="NFr-KK-Aqr" firstAttribute="top" secondItem="sDF-Ro-D7J" secondAttribute="top" constant="5" id="bfi-he-mhB"/>
+                    <constraint firstAttribute="bottom" secondItem="NFr-KK-Aqr" secondAttribute="bottom" constant="5" id="fhb-Q6-Fya"/>
+                    <constraint firstItem="NFr-KK-Aqr" firstAttribute="leading" secondItem="sDF-Ro-D7J" secondAttribute="leading" constant="5" id="gG5-Us-5nD"/>
+                    <constraint firstAttribute="trailing" secondItem="NFr-KK-Aqr" secondAttribute="trailing" constant="5" id="vOx-ik-n10"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgVwSelectionBox" destination="PcW-DF-Kfx" id="5y4-WY-bIW"/>
+                <outlet property="lblSelectionOption" destination="tLY-4F-yfC" id="2NC-xL-fCH"/>
+            </connections>
+            <point key="canvasLocation" x="4" y="43.628185907046479"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="uncheck" width="256" height="256"/>
+    </resources>
+</document>
