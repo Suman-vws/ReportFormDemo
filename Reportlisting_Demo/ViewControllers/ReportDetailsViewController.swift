@@ -96,6 +96,8 @@ class ReportDetailsViewController: UIViewController, StoryboardViewController {
         let createReportVC = mainStroryBoard.instantiateViewController(withIdentifier: CreateReportViewController.storyBoardIdentifier) as! CreateReportViewController
         // - - - - get saved json input - - - - //
         if let currentReportModel = reportModel{
+            createReportVC.selectedReportDetailsModel = currentReportModel
+
             let reportFormJson = ReportDemoUtility.getReportJsonFileSavePath(folderPath: ReportFormJsonFileSavePath, fileName: "\(currentReportModel.reportJsonFilePath ?? "")")
             createReportVC.arrFormInputFieldDictionary = reportFormJson
             createReportVC.arrFormInputFieldData = arrFormInputFieldData

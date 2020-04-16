@@ -146,6 +146,13 @@ public class ReportJsonDataProvider {
 
 class ReportDemoUtility {
     
+    class func checkJsonFileExists(folderPath : String, fileName : String)->Bool{
+        
+         let filePathUrl = FileManager.documentDirectoryURL.appendingPathComponent("ReportDemo/\(folderPath)/\(fileName)").appendingPathExtension("json")
+
+        return FileManager.default.fileExists(atPath: filePathUrl.path)
+    }
+    
     class func getReportJsonFileSavePath(folderPath : String, fileName : String) -> [Dictionary<String, Any>]?{
         
         let filePathUrl = FileManager.documentDirectoryURL.appendingPathComponent("ReportDemo/\(folderPath)/\(fileName)").appendingPathExtension("json")

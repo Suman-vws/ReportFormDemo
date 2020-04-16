@@ -25,7 +25,7 @@ struct DropDownSelectionOptionModel {
 class ReportDropdownMenuViewController: UIViewController, StoryboardViewController {
     
     @IBOutlet weak var tableView : UITableView!
-    private var selectedOption : DropDownSelectionOptionModel?
+    private var userSelectedOption : DropDownSelectionOptionModel?
     var arrDropDownOption : [DropDownSelectionOptionModel]?
     var strMenuTitle : String?
     var optionSelectionDismissCompletion : ((_ selectedOption : String) -> Void)?
@@ -44,8 +44,8 @@ class ReportDropdownMenuViewController: UIViewController, StoryboardViewControll
     
     override func willMove(toParent parent: UIViewController?) {
         
-        if parent == nil {
-            optionSelectionDismissCompletion?(self.selectedOption?.selectedValue ?? "")
+        if parent == nil, let selectedOptionValue = self.userSelectedOption?.selectedValue{
+            optionSelectionDismissCompletion?(selectedOptionValue)
         }
     }
     
@@ -64,6 +64,9 @@ class ReportDropdownMenuViewController: UIViewController, StoryboardViewControll
     //MARK: // - - - - - - - Button Events - - - - - - - //
     
     @objc func submitOptionSelection(_ sender : UIBarButtonItem){
+        if let selectedOptions = arrDropDownOption?.filter({$0.selectedOptionType == .selected}), selectedOptions.count == 1{
+            userSelectedOption = selectedOptions.first  //stores the selected value
+        }
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -102,7 +105,6 @@ extension ReportDropdownMenuViewController : UITableViewDataSource, UITableViewD
         tableView.deselectRow(at: indexPath, animated: true)
         deselectPreviousSelection()
         arrDropDownOption?[indexPath.row].selectedOptionType = .selected
-        selectedOption = arrDropDownOption?[indexPath.row]  //stores the selected value
         tableView.reloadData()
     }
     

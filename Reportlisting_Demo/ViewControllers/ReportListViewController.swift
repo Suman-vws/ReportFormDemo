@@ -126,7 +126,7 @@ class ReportListViewController: UIViewController, StoryboardViewController {
     }
 }
 
-//mARK: // - - - - - Tableview Delegate - - - - - //
+//MARK: // - - - - - Tableview Data Source - - - - - //
 extension ReportListViewController : UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -180,9 +180,13 @@ extension ReportListViewController : UITableViewDataSource, UITableViewDelegate 
         }
     }
     
+    
+    //MARK: // - - - - - Tableview Delegate - - - - - //
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        if let reportModel = arrReports?[indexPath.row]{
+        
+        let currentSection = ReportListSectionCategory(rawValue : indexPath.section)!
+        if currentSection == .ReportListSection, let reportModel = arrReports?[indexPath.row]{
             navigateToReportDetailsScreen(reportModel)
         }
     }
@@ -204,13 +208,14 @@ extension ReportListViewController : UITableViewDataSource, UITableViewDelegate 
         self.navigationController?.pushViewController(reportDetailsVC, animated: true)
     }
     
+    //MARK:// - - - - - -  TableView Cell Swipe Actions  - - - - - - //
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         
         let currentSection = ReportListSectionCategory(rawValue : indexPath.section)!
         if currentSection == .ReportListSection{
             return true
         }else{
-            return true
+            return false
         }
     }
     
@@ -231,14 +236,71 @@ extension ReportListViewController : UITableViewDataSource, UITableViewDelegate 
             }
                  
         }
-        /*
-        let editAction = UITableViewRowAction.init(style: .normal, title: "Edit") { (action, indexpath) in
+        
+        let editAction = UITableViewRowAction.init(style: .normal, title: "Edit") { [weak self] (action, indexpath) in
+            
+            self?.editReportDetails(with: self?.arrReports?[indexPath.row], currentIndexPath: indexpath)
         }
-        editAction.backgroundColor = UIColor.lightGray  */
+        editAction.backgroundColor = UIColor.lightGray
 
-        return [deleteAction]
+        return [deleteAction, editAction]
     }
     
+    
+    private func editReportDetails(with selectedReportModel : ReportModel?, currentIndexPath : IndexPath){
+
+        let mainStroryBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let createReportVC = mainStroryBoard.instantiateViewController(withIdentifier: CreateReportViewController.storyBoardIdentifier) as! CreateReportViewController
+        // - - - - get saved json input - - - - //
+        if let currentReportModel = selectedReportModel{
+            
+            createReportVC.selectedReportDetailsModel = currentReportModel
+
+            let reportFormJson = ReportDemoUtility.getReportJsonFileSavePath(folderPath: ReportFormJsonFileSavePath, fileName: "\(currentReportModel.reportJsonFilePath ?? "")")
+            createReportVC.arrFormInputFieldDictionary = reportFormJson
+            
+            
+            if let arrFormInputData = generateReportFormData(with: currentReportModel){
+                var arrTempFormInputData : [ReportFormInputFieldModel] = []
+                for formFieldModel in arrFormInputData {
+                    var formInputModel = formFieldModel
+                    formInputModel = ReportDemoUtility.setupReportFormModelWithUserInput(reportDetailsModel: currentReportModel, formInputField: formFieldModel)
+                    arrTempFormInputData.append(formInputModel)
+                }
+                
+                createReportVC.arrFormInputFieldData = arrTempFormInputData
+            }
+        }
+        
+        createReportVC.didCreateReportCompletion = { [weak self] (reportDetailsModel, hasUpdate) in
+          if hasUpdate, let reportModel = reportDetailsModel{
+                self?.arrReports?[currentIndexPath.row] = reportModel
+    //                self?.arrReports = self?.fetchSavedReports()
+                self?.tableView.reloadData()
+            }
+        }
+
+        self.navigationController?.pushViewController(createReportVC, animated: true)
+    }
+    
+    
+    private func generateReportFormData(with reportModel : ReportModel?)-> [ReportFormInputFieldModel]?{
+        
+        if let currentReportModel = reportModel{
+            
+            let reportFormJson = ReportDemoUtility.getReportJsonFileSavePath(folderPath: ReportFormJsonFileSavePath, fileName: "\(currentReportModel.reportJsonFilePath ?? "")")
+            
+            if let arrFormInput = reportFormJson, !arrFormInput.isEmpty{
+                let arrFormModel = arrFormInput.map { (inputFieldDict) -> ReportFormInputFieldModel in
+                    let inputModel = ReportFormInputFieldModel.generateFormModel(formFieldDict: inputFieldDict)
+                    return inputModel
+                }
+                return arrFormModel.sorted(by: {$0.uniqueId < $1.uniqueId})
+            }
+        }
+        
+        return nil
+    }
 }
 
 

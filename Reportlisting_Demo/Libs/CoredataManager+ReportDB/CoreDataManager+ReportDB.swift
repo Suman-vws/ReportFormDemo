@@ -27,12 +27,12 @@ extension CoreDataManager {
     
     public func upsertReportDetails(_ reportModelObj : ReportModel, closure : @escaping((_ status : Bool ) -> Void)) {
         
-        if let userName = reportModelObj.name, !userName.isEmpty, let savePath = reportModelObj.reportJsonFilePath, !savePath.isEmpty{
+        if let savePath = reportModelObj.reportJsonFilePath, !savePath.isEmpty{
 
             var reportDb : ReportDB?
             
             let reportContext = CoreDataManager.sharedStore.fetchPrivateContext()
-            let reportPredicate : NSPredicate = NSPredicate(format: "name = %@ AND jsonFileSavePath = %@", userName, savePath)
+            let reportPredicate : NSPredicate = NSPredicate(format: "jsonFileSavePath = %@", savePath)
             
             let resultArr : NSArray = self.fetchManageObjectForEnity(enityName: ReportDBEntity as NSString,predicate: reportPredicate , currentContex: reportContext)
             
@@ -53,10 +53,10 @@ extension CoreDataManager {
     
     public func deleteReportDetails(_ reportModelObj : ReportModel, closure : @escaping((_ status : Bool ) -> Void)) {
           
-          if let userName = reportModelObj.name, !userName.isEmpty, let savePath = reportModelObj.reportJsonFilePath, !savePath.isEmpty{
+          if let savePath = reportModelObj.reportJsonFilePath, !savePath.isEmpty{
               
             let reportContext = CoreDataManager.sharedStore.fetchPrivateContext()
-            let reportPredicate : NSPredicate = NSPredicate(format: "name = %@ AND jsonFileSavePath = %@", userName, savePath)
+            let reportPredicate : NSPredicate = NSPredicate(format: "jsonFileSavePath = %@", savePath)
             let resultArr : NSArray = self.fetchManageObjectForEnity(enityName: ReportDBEntity as NSString,predicate: reportPredicate , currentContex: reportContext)
 
             if resultArr.count > 0 {

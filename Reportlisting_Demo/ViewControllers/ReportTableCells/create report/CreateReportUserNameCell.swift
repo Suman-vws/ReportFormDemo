@@ -56,7 +56,7 @@ extension CreateReportUserNameCell : UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
       
-        if let inputText = textField.text, !inputText.isEmpty{
+        if let inputText = textField.text   /*  , !inputText.isEmpty */ {
             delegate?.nameInputDidSubmit(inputText)
         }
         

@@ -15,11 +15,12 @@ class CreateReportViewController: UIViewController, StoryboardViewController {
     @IBOutlet weak var tableView : UITableView!
     var arrFormInputFieldData : [ReportFormInputFieldModel]?
     var arrFormInputFieldDictionary : [Dictionary<String, Any>]?
-    private var strSelectedFieldValue : String?
+    var selectedReportDetailsModel : ReportModel?
 
-    private var tableInitialContentHeight : CGFloat?
+    private var tableInitialContentHeight : CGFloat!
     private var reportDetailsModel = ReportModel()
     private var hasReportUpdated : Bool = false
+    
     var didCreateReportCompletion : ((_ associatedReportModel : ReportModel?, _ hasUpdate : Bool) -> Void)?
 
     override func viewDidLoad() {
@@ -31,6 +32,12 @@ class CreateReportViewController: UIViewController, StoryboardViewController {
         tableView.separatorStyle = .singleLine
         tableView.estimatedRowHeight = UITableView.automaticDimension
         registerNibsForTableView()
+        
+        if let reportModel = selectedReportDetailsModel {       //initialing report model for editing
+            reportDetailsModel = reportModel
+        }
+        
+        tableInitialContentHeight = tableView.bounds.size.height
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -61,50 +68,38 @@ class CreateReportViewController: UIViewController, StoryboardViewController {
     
     @objc private func keyboardWillChangeFrame(_ notification : Notification) {
         
-        let userInfo = notification.userInfo
-        let keyboardFrame: NSValue = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
-        //userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
-        let keyboardRectangle = keyboardFrame.cgRectValue
-        let keyboardHeight = keyboardRectangle.height
-        
-        print("keyboardHeight : \(keyboardHeight)")
+        var showkeyboard : Bool!
         
         if notification.name == UIResponder.keyboardWillHideNotification{       //hide keyboard
-            
-            adjustViewPositionOnKeyboardHeightChange(keyboardHeight, hideKeyboard: true)
-            
+            showkeyboard = false
         }else if notification.name == UIResponder.keyboardWillShowNotification{ //show keyboard
-            
-            adjustViewPositionOnKeyboardHeightChange(keyboardHeight, hideKeyboard: false)
+            showkeyboard = true
         }
+        
+        let curFrame = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let targetFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let deltaY = curFrame.origin.y - targetFrame.origin.y
+        
+        adjustViewPositionOnKeyboardHeightChange(deltaY, hideKeyboard: showkeyboard)
+
+//        if deltaY >= 0{
+//            print("delta Y : \(deltaY)")
+//            adjustViewPositionOnKeyboardHeightChange(deltaY, hideKeyboard: showkeyboard)
+//        }
+
+      
     }
     
     private func adjustViewPositionOnKeyboardHeightChange(_ keyBoardHeight : CGFloat, hideKeyboard : Bool){
         
         UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: UIView.AnimationOptions.curveEaseInOut, animations: { [weak self] in
-            
-            if let _ = self?.tableInitialContentHeight {    //restrict to add keyboard height twice, to adjust content size-height
-                
-                self?.tableView.contentSize = CGSize(width: (self?.tableView.contentSize.width ?? 0.0), height: (self?.tableInitialContentHeight)! + keyBoardHeight)
-                
-            }else{
-                self?.tableInitialContentHeight = self?.tableView.contentSize.height
-                self?.tableView.contentSize = CGSize(width: (self?.tableView.contentSize.width ?? 0.0), height: (self?.tableInitialContentHeight)! + keyBoardHeight)
-            }
-            
-            var tempHeight = keyBoardHeight
-            if hideKeyboard {
-                tempHeight = 0.0
-                //reset table view content size-height
-                self?.tableView.contentSize = CGSize(width: (self?.tableView.contentSize.width ?? 0.0), height: self?.tableInitialContentHeight ?? 0.0)
-            }
-            
-            self?.tableView.contentOffset = CGPoint(x: 0.0, y: tempHeight + 20.0)
-            
-            
-        }) { (completed) in
-            
-        }
+
+            self?.tableView.contentSize = CGSize(width: (self?.tableView.contentSize.width ?? 0.0), height: (self?.tableInitialContentHeight)! + keyBoardHeight)
+        
+            },
+            completion: { (completed) in
+
+            })
     }
     
     private func registerNibsForTableView(){
@@ -132,23 +127,28 @@ class CreateReportViewController: UIViewController, StoryboardViewController {
         self.view.endEditing(true)
         
         if validateReportFormInputs() {
-            
-            hasReportUpdated = true
-            
-            //process form data
-            let timestamp = Date().currentTimeMillis()
-            reportDetailsModel.createDate = Date()
-            reportDetailsModel.reportJsonFilePath = "\(timestamp)"
+            hasReportUpdated = true     //flag for denoting if the report has been modified
+
+            if reportDetailsModel.createDate == nil{ //applicable for edit action
+                reportDetailsModel.createDate = Date()
+            }
+
+            if reportDetailsModel.reportJsonFilePath == nil{
+                let timestamp = Date().currentTimeMillis()
+                reportDetailsModel.reportJsonFilePath = "\(timestamp)"
+            }
             
             CoreDataManager.sharedStore.upsertReportDetails(reportDetailsModel) { [weak self] (success) in
                 
-                let formattedDict = self?.reportDetailsModel.createReportDictFormUserInput()
-                print("\(formattedDict ?? [:])")
-                
-                //saving form data into Json file, in Document directory
-                let jsonString = self?.arrFormInputFieldDictionary?.jsonStringRepresentation ?? ""
-                ReportDemoUtility.saveReportJsonDataInDocumentDirectory(jsonString, folderPath: ReportFormJsonFileSavePath, fileName: "\(timestamp)")
-                
+                if ReportDemoUtility.checkJsonFileExists(folderPath: ReportFormJsonFileSavePath, fileName: "\(self?.reportDetailsModel.reportJsonFilePath ?? "")") == false {       //json file write action in document directory
+                    
+                    let formattedDict = self?.reportDetailsModel.createReportDictFormUserInput()
+                    print("\(formattedDict ?? [:])")
+                    //saving form data into Json file, in Document directory
+                    let jsonString = self?.arrFormInputFieldDictionary?.jsonStringRepresentation ?? ""
+                    ReportDemoUtility.saveReportJsonDataInDocumentDirectory(jsonString, folderPath: ReportFormJsonFileSavePath, fileName: "\(self?.reportDetailsModel.reportJsonFilePath ?? "")")
+                }
+          
                 DispatchQueue.main.async {
                     self?.navigationController?.popViewController(animated: true)
                 }
@@ -330,7 +330,7 @@ extension CreateReportViewController : UITableViewDataSource, UITableViewDelegat
                 let arrDropdownSelectionModel = arrSelectionOptions.map { (selecteionFieldValue) -> DropDownSelectionOptionModel in
                     
                     var dropDownSelectedStyle = DropDownSelectionOptionCategory.deselected
-                    if let currentSelection = self.strSelectedFieldValue, currentSelection == selecteionFieldValue{
+                    if let currentSelection = inputFieldModel?.answerInput as? String, currentSelection == selecteionFieldValue{
                         dropDownSelectedStyle = DropDownSelectionOptionCategory.selected
                     }
                     
@@ -345,9 +345,7 @@ extension CreateReportViewController : UITableViewDataSource, UITableViewDelegat
                 
                 if let currentFieldModel = self?.arrFormInputFieldData?[indexPath.row], currentFieldModel.fieldType == .dropDownSelection{
                     
-                    self?.strSelectedFieldValue = selectedOption
                     self?.arrFormInputFieldData?[indexPath.row].answerInput = selectedOption
-                    
                     if currentFieldModel.fieldName == "hobbies"{
                         self?.reportDetailsModel.hobbies = selectedOption
                     }else if currentFieldModel.fieldName == "gender"{
@@ -355,7 +353,6 @@ extension CreateReportViewController : UITableViewDataSource, UITableViewDelegat
                     }
                 }
                 
-                self?.arrFormInputFieldData?[indexPath.row].answerInput = selectedOption
                 self?.tableView.reloadRows(at: [indexPath], with: .automatic)
             }
             self.navigationController?.pushViewController(dropDownMenuVC, animated: true)
